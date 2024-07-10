@@ -1,0 +1,14 @@
+{
+  "name": "g4_construtora-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "author": "Matheus Costa Alves",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
