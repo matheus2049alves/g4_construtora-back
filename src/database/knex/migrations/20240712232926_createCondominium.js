@@ -12,11 +12,12 @@ exports.up = knex => knex.schema.createTable("condominium", table => {
   table.integer("number").notNullable();
   table.text("city").notNullable();
   table.text("state").notNullable();
-  table.text("cep", 8).notNullable()
-  
+  table.text("cep", 8).notNullable();
+  table.timestamp("created_at").default(knex.fn.now());
+  table.timestamp("updated_at").default(knex.fn.now());
 
 
 });
 
 
-exports.down = knex => knex.schema.dropTable("properties");
+exports.down = knex => knex.schema.dropTable("condominium");
