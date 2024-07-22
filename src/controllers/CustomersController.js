@@ -90,7 +90,7 @@ class CustomersController{
       updated_at : knex.fn.now()
     })
 
-    response.json({message : "user successfully updated"})
+   return response.json({message : "user successfully updated"})
   }
 }
 

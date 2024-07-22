@@ -32,7 +32,7 @@ class CondominiumController{
           cep
         } )
 
-        response.json()
+        return response.json()
     
   }
 }
