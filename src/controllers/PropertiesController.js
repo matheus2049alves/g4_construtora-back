@@ -34,6 +34,25 @@ class PropertiesController{
       message: "property created"
     })
   }
+  async delete(request, response){
+    const {id} = request.params;
+
+    await knex("properties").where({id}).delete();
+
+    return response.json({message: "property deleted"});
+  }
+
+  async index(request, response){
+    const {price} = request.query;
+    const properties = await knex("properties")
+    .leftJoin('condominium','properties.condominium_id', 'condominium.id' )
+    .select('properties.*', 'condominium.*')
+    .where('properties.price', '<', price)
+    
+    return response.json(properties)
+  }
+
+
 }
 
 
